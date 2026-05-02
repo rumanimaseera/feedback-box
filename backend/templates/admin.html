@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Feedback Box</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/">Submit Feedback</a>
+            <a href="/admin">Admin Dashboard</a>
+        </div>
+        
+        <h1>Feedback Analytics</h1>
+        
+        <!-- Stats Section -->
+        <div class="stats-container" id="statsContainer">
+            <div class="stat-card">
+                <div class="value" id="statTotal">-</div>
+                <div class="label">Total Feedback</div>
+            </div>
+            <div class="stat-card stat-positive">
+                <div class="value" id="statPositive">-</div>
+                <div class="label">Positive</div>
+            </div>
+            <div class="stat-card stat-neutral">
+                <div class="value" id="statNeutral">-</div>
+                <div class="label">Neutral</div>
+            </div>
+            <div class="stat-card stat-negative">
+                <div class="value" id="statNegative">-</div>
+                <div class="label">Negative</div>
+            </div>
+        </div>
+        
+        <h2>Recent Feedback</h2>
+        <!-- Feedback List Section -->
+        <div class="feedback-list" id="feedbackList">
+            <div class="loading-state">
+                <div class="spinner"></div>
+                <p>Loading feedback...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+</body>
+</html>
